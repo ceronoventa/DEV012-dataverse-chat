@@ -91,5 +91,7 @@ export const home = () => {
         <strong>Proyecto Dataverse de Laboratia</strong>
       </p>
     </footer> `;
- return homeView;
+const container = document.createElement('div');
+container.innerHTML = homeView;
+return container;
 }
