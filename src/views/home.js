@@ -1,6 +1,6 @@
-import {footer} from '../components/footer.js';
+// import {footer} from '../components/footer.js';
 export const home = () => {
-
+  const homeRoot = document.getElementById('root');
   const homeView = 
   ` <header>
   <img id="logo" src="./logokaonashi.png"/>
@@ -85,7 +85,6 @@ export const home = () => {
 <div class="container">
 </div>
 <div id="noResultsFound" ></div>`;
-const container = document.createElement('div');
-container.innerHTML = homeView +`${footer}`;
-return container ;
+homeRoot.innerHTML = homeView;
+return homeView ;
 }
