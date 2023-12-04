@@ -1,5 +1,5 @@
 export const error = () => {
-  const errorRoot = document.getElementById(root);
+  const errorRoot = document.getElementById('root');
   const errorView =
    `<header>
    <img id="logo" src="./logokaonashi.png"/>
