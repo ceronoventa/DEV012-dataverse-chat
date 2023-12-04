@@ -1,4 +1,4 @@
-
+import {footer} from '../components/footer.js';
 export const home = () => {
 
   const homeView = 
@@ -84,14 +84,8 @@ export const home = () => {
 
 <div class="container">
 </div>
-<div id="noResultsFound" ></div>
-<footer>
-      <p>
-        Belén Osorio y Camila Palma<br>
-        <strong>Proyecto Dataverse de Laboratia</strong>
-      </p>
-    </footer> `;
+<div id="noResultsFound" ></div>`;
 const container = document.createElement('div');
-container.innerHTML = homeView;
-return container;
+container.innerHTML = homeView +`${footer}`;
+return container ;
 }

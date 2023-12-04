@@ -7,5 +7,7 @@ export const footer = () => {
       <strong>Proyecto Dataverse de Laboratia</strong>
     </p>
   </footer> `;
-return footerView;
+  const footerComponent = document.createElement('div');
+  footerComponent.innerHTML = footerView;
+  return footerComponent ;
 }
