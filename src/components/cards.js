@@ -1,8 +1,11 @@
 export const renderItems = (data) => {
-    let showInHtml = "";
+  const cardsComponent = document.createElement("ul");
+  cardsComponent.classList.add("cards")  
+ 
+  let showInHtml = "";
     data.forEach((items) => {
       showInHtml += `
-        <li itemscope itemtype="PeliculasAnimacionJaponesa" class="itemcontainer" data-id="${items.id}">
+        <li itemscope itemtype="PeliculasAnimacionJaponesa" class="itemMuro" data-id="${items.id}">
               <dl itemscope itemtype="PeliculasAnimacionJaponesa">
               <img src="${items.imageUrl}" alt="${items.name}"/>
               <div class="texto">
@@ -16,6 +19,7 @@ export const renderItems = (data) => {
           </li>
       `;
     });
+    cardsComponent.appendChild(showInHtml);
   
-    return `<ul class="cards">${showInHtml}</ul>`;
+    return cardsComponent;
   };

@@ -19,6 +19,5 @@ const routes = {
  
 setRoutes(routes);
 document.addEventListener("DOMContentLoaded", (event) => {
-    console.log(event.target.location.pathname)
 onURLChange(event.target.location.pathname)
 });
