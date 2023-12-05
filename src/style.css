@@ -124,7 +124,7 @@ button:hover {
   justify-content: center;
   margin-top: 40px;
 }
-.itemcontainer {
+.itemMuro {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -138,7 +138,7 @@ button:hover {
   background: rgb(40, 40, 40);
   position: relative;
 }
-.container img {
+.muro img {
   max-width: 220px;
   max-height: 264px;
   border-radius: 6px;

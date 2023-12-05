@@ -1,5 +1,5 @@
 export const footer = () => {
-
+  const footerComponent = document.createElement("div");
     const footerView = 
     `<footer>
     <p>
@@ -7,7 +7,6 @@ export const footer = () => {
       <strong>Proyecto Dataverse de Laboratia</strong>
     </p>
   </footer> `;
-  const footerComponent = document.createElement('div');
   footerComponent.innerHTML = footerView;
   return footerComponent ;
 }

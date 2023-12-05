@@ -1,20 +1,11 @@
-import { searchByName } from "./dataFunctions.js";
-import { filterByGenre, filterByStudio, filterByYear, computeStats, metricasTotales } from "./dataFunctions.js";
-import { sortData } from "./dataFunctions.js";
-import { renderItems } from "./view.js";
+
+
 import data from "./data/dataset.js";
 
 //------------------------Data(Conteo de peliculas)-----------------------
 let filtroAcumulativo = data;
 const pcomputeStats = document.querySelector(".compute-stats");
 pcomputeStats.innerHTML="Total de películas: " + computeStats(filtroAcumulativo);
-
-//------------------------Metricas(enconstruccion)-----------------------
-
-const pmetricas = document.querySelector(".metricas");
-const totalesMetricas = document.createElement("p")
-totalesMetricas.textContent = metricasTotales(data);
-pmetricas.appendChild(totalesMetricas);
 
 //------------------------Invocar  el container-----------------------
 const cardsContainer = document.querySelector("#root");
