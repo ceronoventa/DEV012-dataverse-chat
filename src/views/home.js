@@ -15,13 +15,19 @@ contenedor.appendChild(nav());
 // ESTADISTICAS, MURO Y "NO RESULTADOS"
 const estadisticas = document.createElement("p");
 estadisticas.classList.add("compute-stats");
+
+//crea un contenedor para las cartas
 const muro = document.createElement("div");
 muro.classList.add("muro");
+//llama a la función render para generar y mostrar las cards
+muro.appendChild(renderItems());
+//agrega el contenedor de card al contenedor principal
+contenedor.appendChild(muro);
+
 const noResultsFound = document.createElement("div");
 noResultsFound.classList.add("noResultsFound");
 
-//CARTAS
-// muro.appendChild(renderItems());
+
 
 
 contenedor.appendChild(footer());
