@@ -79,14 +79,7 @@ select:hover {
   background-color: #f8b943;
   transition: 5ms;
 }
-/*No funciona
-option {
-  color: #080808;
-  background-color: #febf4e;
-}
-option:hover {
-  background-color: #fe9a4e;
-}*/
+
 button {
   font-size: 15px;
   font-weight: bold;
@@ -107,9 +100,7 @@ button:hover {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #c90040;
   padding-bottom: 15px;
-  /*
-  font-style: unset;
-*/
+
 }
 .compute-stats {
   font-size: 20px;
@@ -138,7 +129,7 @@ button:hover {
   background: rgb(40, 40, 40);
   position: relative;
 }
-.muro img {
+.itemMuro img {
   max-width: 220px;
   max-height: 264px;
   border-radius: 6px;
