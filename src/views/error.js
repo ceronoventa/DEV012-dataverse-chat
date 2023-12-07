@@ -13,7 +13,7 @@ export const error = () => {
  <nav><div class ="metricas"><br></div>
  <p class ="compute-stats"></p>
 
-<div class="container">
+<div class="container"> error
 </div>
 <div id="noResultsFound" ></div>
 <footer>
