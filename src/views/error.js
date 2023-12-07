@@ -1,27 +1,16 @@
-export const error = () => {
-  const errorRoot = document.getElementById('root');
-  const errorView =
-   `<header>
-   <img id="logo" src="./logokaonashi.png"/>
-   <h1>Kaonashi Pelis</h1> 
-   
-   <input type="checkbox" id="check">
-   <label for="check" class="checkbtn">
-   <img class="menuIcon" src="img/iconoMenu.png">
- </label>
- </header>
- <nav><div class ="metricas"><br></div>
- <p class ="compute-stats"></p>
+import { footer } from "../components/footer.js";
+import { header } from "../components/header.js";
+import { barra } from "../components/barra.js";
 
-<div class="container"> error
-</div>
-<div id="noResultsFound" ></div>
-<footer>
-     <p>
-       Belén Osorio y Camila Palma<br>
-       <strong>Proyecto Dataverse de Laboratia</strong>
-     </p>
-   </footer>`; 
-   errorRoot.innerHTML = errorView;
-  return errorView;
+export const error = () => {
+  //CONTENEDOR
+  const contenedor = document.createElement("div");
+  //HEADER
+  contenedor.appendChild(header());
+  //BARRA
+  contenedor.appendChild(barra());
+   //FOOTER
+  contenedor.appendChild(footer());
+
+  return contenedor;
  }

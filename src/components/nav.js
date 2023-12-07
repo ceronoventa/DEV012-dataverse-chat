@@ -2,9 +2,8 @@ export const nav = () => {
 const navComponent = document.createElement("div");
     const navView = `<nav>
   <input id="inputFilter" name="searchButton" type="search" placeholder="Buscar película"/>
-  
   <label for="genre"></label>
-  <select id ="genre" data-testid="select-filter" name="genre">
+  <select id ="genre" data-testid="select-filter" name="genre"}>
     <option disabled selected value="">Genero</option>
     <option value="Acción">Acción</option>
     <option value="Aventura">Aventura</option>

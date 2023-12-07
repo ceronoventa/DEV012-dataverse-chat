@@ -12,7 +12,7 @@ const routes = {
     "/error": error,
     "/singleChat": singleChat,
     "/panel": panel,
-    "/apikey": apiKey,
+    "/apiKey": apiKey,
   
   };
 
