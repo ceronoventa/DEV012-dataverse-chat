@@ -1,27 +1,15 @@
-export const apiKey = () => {
-  const apiKeyRoot = document.getElementById('root');
-  const apiKeyView =
-   `<header>
-   <img id="logo" src="./logokaonashi.png"/>
-   <h1>Kaonashi Pelis</h1> 
-   
-   <input type="checkbox" id="check">
-   <label for="check" class="checkbtn">
-   <img class="menuIcon" src="img/iconoMenu.png">
- </label>
- </header>
- <nav><div class ="metricas"><br></div>
- <p class ="compute-stats"></p>
+import { footer } from "../components/footer.js";
+import { header } from "../components/header.js";
 
-<div class="container">apiKey
-</div>
-<div id="noResultsFound" ></div>
-<footer>
-     <p>
-       Belén Osorio y Camila Palma<br>
-       <strong>Proyecto Dataverse de Laboratia</strong>
-     </p>
-   </footer>`; 
-   apiKeyRoot.innerHTML = apiKeyView;
-  return apiKeyView;
+export const apiKey = () => {
+
+  //CONTENEDOR
+  const contenedor = document.createElement("div");
+  //HEADER
+  contenedor.appendChild(header());
+
+   //FOOTER
+ contenedor.appendChild(footer());
+
+  return contenedor;
  }
