@@ -86,9 +86,9 @@ export const home = () => {
   cards.appendChild(renderItems(dataAnime));
   estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
   });
-/*
+
   //BOTON LIMPIAR
-  const clearButton = contenedor.getElementById("button");
+  const clearButton = contenedor.querySelector('button[id="btn-clear"]');
   clearButton.addEventListener("click", function () {
   const selectores = contenedor.querySelectorAll("select");
   const searchInput = contenedor.querySelector('select[name="searchButton"]');
@@ -96,11 +96,12 @@ export const home = () => {
     selector.value = selector.options[0].value;
     searchInput.value = "";
     noResultsFound.innerHTML = "";
+    cards.innerHTML="";
     dataAnime = data;
     cards.appendChild(renderItems(dataAnime));
     estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
   });
 });
-*/
+
   return contenedor;
 };
