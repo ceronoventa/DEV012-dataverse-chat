@@ -3,6 +3,7 @@ const navComponent = document.createElement("div");
     const navView = `<nav>
   <input id="inputFilter" name="searchButton" type="search" placeholder="Buscar película"/>
   <label for="genre"></label>
+  
   <select id ="genre" data-testid="select-filter" name="genre"}>
     <option disabled selected value="">Genero</option>
     <option value="Acción">Acción</option>
@@ -61,7 +62,7 @@ const navComponent = document.createElement("div");
     <option value="desc">Descendente</option>
   </select>
 
-  <button id="button" data-testid="button-clear">Limpiar</button>
+  <button id="btn-clear" data-testid="button-clear">Limpiar</button>
 </nav>`
 navComponent.innerHTML = navView;
   return navComponent ;
