@@ -1,8 +1,10 @@
 export const movieDetail = (data) => {
-    let movieDetailHTML = "";
+  const movieComponent = document.createElement("ul");
+  movieComponent.classList.add("movie")
+    let movieDetailHtml = "";
     data.forEach((item) => {
-        movieDetailHTML +=  `
-      <li itemscope itemtype="PeliculasAnimacionJaponesa" class="itemcontainer" data-id="${item.id}">
+      movieDetailHtml +=  `
+        <li itemscope itemtype="PeliculasAnimacionJaponesa" class="itemcontainer" data-id="${item.id}">
         <dl itemscope itemtype="PeliculasAnimacionJaponesa">
           <img src="${item.imageUrl}" alt="${item.name}"/>
           <div class="texto">
@@ -15,8 +17,9 @@ export const movieDetail = (data) => {
           </div>
         </dl>
       </li>
+      
       `;
     });
-  
-    return `<ul class="cards">${movieDetailHTML}</ul>`;
+    movieComponent.innerHTML += movieDetailHtml;
+    return movieComponent;
   };

@@ -80,7 +80,7 @@ select:hover {
   transition: 5ms;
 }
 
-button {
+#btn-clear {
   font-size: 15px;
   font-weight: bold;
   border: none;
@@ -90,7 +90,7 @@ button {
   border-radius: 5px;
   margin-left: 15px;
 }
-button:hover {
+#btn-clear:hover, #btn-panel:hover, #btn-apiKey:hover {
   background-color: rgba(255, 12, 89, 0.902);
 }
 .metricas {
@@ -104,10 +104,11 @@ button:hover {
 }
 .compute-stats {
   font-size: 20px;
-  color: rgb(255, 255, 255);
+  color: black;
   text-align: center;
   padding: 10px 0px;
-  background-color: rgb(40, 40, 40);
+  background-color:#ffffff;
+  font-family: "Hammersmith One", sans-serif;
 }
 #barra{
   background-color: black;
@@ -116,8 +117,28 @@ button:hover {
   color: #ffffff;
   font-size: 15px;
 }
-#btn-panel{}
-
+#btn-panel{
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  color: white;
+  background-color: #c90040;
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+#btn-apiKey{
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  color: white;
+  background-color: #c90040;
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
