@@ -5,6 +5,7 @@ import { nav } from "../components/nav.js";
 import { barra } from "../components/barra.js";
 import { renderItems } from "../components/cards.js";
 import { searchByName, filterByGenre, filterByStudio, filterByYear, computeStats, sortData } from "../lib/dataFunctions.js";
+// import { navigateTo } from "../router.js";
 
 export const home = () => {
   let dataAnime = data;
@@ -108,6 +109,7 @@ export const home = () => {
   });
 
 });
+// linkEl.addEventListener('click', () => navigateTo("/singleChat", { id: "akira", id: "my-neighbor-totoro" }));
 
   return contenedor;
 };
