@@ -3,7 +3,7 @@ import { header } from "../components/header.js";
 import { barra } from "../components/barra.js";
 import { movieDetail } from "../components/movieDetail.js";
 
-export const singleChat = () => {
+export const singleChat = (props) => {
  //CONTENEDOR
  const contenedor = document.createElement("div");
  //HEADER Y NAV
@@ -11,9 +11,10 @@ export const singleChat = () => {
  contenedor.appendChild(barra());
 
   // MOVIE
-  const movie = document.createElement("div");
-  movie.appendChild(movieDetail(dataAnime));
-  contenedor.appendChild(movie);
+const selectedMovie = props
+
+const movieDetailContainer = movieDetail(selectedMovie);
+contenedor.appendChild(movieDetailContainer);
 
   //FOOTER
 contenedor.appendChild(footer());
