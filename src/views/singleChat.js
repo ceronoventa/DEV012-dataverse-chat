@@ -11,8 +11,7 @@ export const singleChat = (props) => {
  contenedor.appendChild(barra());
 
   // MOVIE
-const selectedMovie = props
-
+const selectedMovie = props;
 const movieDetailContainer = movieDetail(selectedMovie);
 contenedor.appendChild(movieDetailContainer);
 
