@@ -15,6 +15,11 @@ const selectedMovie = props;
 const movieDetailContainer = movieDetail(selectedMovie);
 contenedor.appendChild(movieDetailContainer);
 
+//CHAT
+const chatMovie = document.createElement("div");
+chatMovie.classList.add("chat-movie");
+contenedor.appendChild(chatMovie);
+
   //FOOTER
 contenedor.appendChild(footer());
 

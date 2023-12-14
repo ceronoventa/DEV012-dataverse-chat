@@ -2,7 +2,6 @@ import { navigateTo } from "../router.js";
 export const renderItems = (data) => {
   const cardsComponent = document.createElement("ul");
   cardsComponent.classList.add("cards")
-  let showInHtml = "";
     data.forEach((pelicula) => {
       const listItem = document.createElement("li");
 listItem.setAttribute("itemscope","");
@@ -22,7 +21,7 @@ listItem.innerHTML += `
             </dl>
       `;
       listItem.addEventListener("click",() => {
-navigateTo("/singleChat",pelicula )
+navigateTo("/singleChat", pelicula )
       })
       cardsComponent.appendChild(listItem);
     });
