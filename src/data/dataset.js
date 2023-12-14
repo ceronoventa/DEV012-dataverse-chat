@@ -49,7 +49,7 @@ export default [
         "Un ninja solitario debe enfrentarse a demonios y asesinos mortales en un emocionante viaje lleno de acción y misterio.",
       description:
         "Ninja Scroll es una película de anime que combina acción y aventuras, lanzada en 1993 y dirigida por Yoshiaki Kawajiri. La historia sigue a Jubei Kibagami, un ninja solitario, mientras se ve envuelto en una trama mortal que involucra a un grupo de guerreros sobrenaturales y un misterioso oro. Con combates emocionantes y una trama llena de giros, la película se ha convertido en un clásico del anime y es conocida por su estilo visual distintivo y su trama intensa.",
-      imageUrl: "https://www.ecartelera.com/carteles/6000/6061/001_p.jpg",
+      imageUrl: "https://i.pinimg.com/564x/38/52/de/3852de44be93a2c66678e1beee052080.jpg",
       facts: {
         year: 1993,
         genre: "Acción · Aventura · Fantasía",
@@ -108,7 +108,7 @@ export default [
         "Los cazarrecompensas del Bebop se embarcan en una última misión épica para atrapar a un peligroso asesino en Marte.",
       description:
         "Es una película de anime basada en la exitosa serie de televisión Cowboy Bebop. Dirigida por Shinichirō Watanabe, la trama sigue a los cazarrecompensas del Bebop mientras investigan una serie de explosiones mortales en Marte. La película ofrece una narrativa independiente llena de acción, misterio y personajes complejos, ambientada en un universo futurista influenciado por el jazz y el cine noir. Knockin' on Heaven's Door es alabada por su impresionante animación y música, manteniendo el atractivo del fenómeno Cowboy Bebop y atrayendo a nuevos fanáticos al mundo de estos cazarrecompensas.",
-      imageUrl: "https://www.ecartelera.com/carteles/8000/8003/001_p.jpg",
+      imageUrl: "https://pics.filmaffinity.com/Cowboy_Bebop_la_pelaicula_Llamando_a_las_puertas_del_cielo-336990891-large.jpg",
       facts: {
         year: 2001,
         genre: "Ciencia Ficción · Thriller",
@@ -138,7 +138,7 @@ export default [
       description:
         "Una película de animación japonesa dirigida por Hayao Miyazaki y producida por Studio Ghibli. La historia sigue a Porco Rosso, un piloto y aventurero convertido en cerdo antropomórfico, mientras combate piratas aéreos en el Adriático entre las dos guerras mundiales. La película presenta un mundo exquisitamente detallado y personajes encantadores, y aborda temas de honor, identidad y la lucha contra el mal. Con su estética nostálgica y encanto, Porco Rosso es una obra maestra que combina comedia, aventura y reflexión, y ha ganado un lugar especial en el corazón de los amantes del cine de animación.",
       imageUrl:
-        "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSXI2NuFLET7y_rIV4gxGscpBcA-VbnQM6c7dCsK3OtBilpay79",
+        "https://pbs.twimg.com/media/FRCTt6pXwAMCRjK?format=jpg&name=medium",
       facts: {
         year: 1992,
         genre: "Aventura",
@@ -168,7 +168,7 @@ export default [
       description:
         "Dirigida por Satoshi Kon, es un intrigante thriller de animación que explora los límites entre la realidad y los sueños. La trama sigue a una terapeuta llamada Paprika que utiliza un dispositivo para entrar en los sueños de sus pacientes. Sin embargo, cuando el dispositivo es robado y los sueños comienzan a invadir la realidad, el mundo se sumerge en el caos. La película es un viaje psicodélico a través de los paisajes oníricos y los oscuros secretos de la mente humana, ofreciendo una narrativa surrealista y visualmente impactante. Paprika es un viaje emocionante y cerebral que desafía la percepción.",
       imageUrl:
-        "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQdeH6W5bSU4T4L2J2BELJ6Jfuli_bPkpHzjgTEyxvJ_UEqfZxb",
+        "https://i.pinimg.com/564x/07/f7/3e/07f73ea2dceaa4bc0912184b66bbdffb.jpg",
       facts: {
         year: 2006,
         genre: "Ciencia Ficción · Psicológico",
@@ -287,7 +287,7 @@ export default [
       description:
         "Dirigida por Naoko Yamada, es una conmovedora película de animación japonesa que aborda el tema del bullying y la redención. La historia sigue a Shoya Ishida, quien busca la redención por haber acosado a una compañera sorda, Shoko Nishimiya, en la escuela primaria. La película explora temas de comunicación, aislamiento y perdón, mientras los personajes buscan reconciliarse con su pasado. A Silent Voice ofrece una narrativa compleja y emotiva que invita a la reflexión sobre la importancia de la empatía y la aceptación, y es un retrato profundamente conmovedor de la lucha por la redención personal.",
       imageUrl:
-        "https://blacknerdproblems.com/wp-content/uploads/2021/05/A-Silent-Voice-e1622441591313.jpg",
+        "https://www.lahiguera.net/cinemania/pelicula/8433/a_silent_voice-cartel-7966.jpg",
       facts: {
         year: 2016,
         genre: "Drama · Romance",
@@ -302,7 +302,7 @@ export default [
       description:
         "El Tiempo Contigo es una película de animación japonesa dirigida por Makoto Shinkai. La película se lanzó en el año 2019 y es conocida por su hermosa animación y su historia romántica y fantástica. La trama sigue a un joven llamado Hodaka que se muda a Tokio y se encuentra con una chica llamada Hina, que tiene el poder de controlar el clima. Juntos, enfrentan desafíos y descubren el significado de la conexión humana en un mundo donde el clima es impredecible.",
       imageUrl:
-        "https://fesapusewebsite.blob.core.windows.net/fathom/wwy-6489619c29fb58fcfe879a5043a6ed35.jpg",
+        "https://i.pinimg.com/564x/8d/5d/fb/8d5dfb37d72919f4c55da7c909f0e6cc.jpg",
       facts: {
         year: 2019,
         genre: "Romance · Fantasía",
