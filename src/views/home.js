@@ -2,8 +2,10 @@ import data from "../data/dataset.js";
 import { footer } from "../components/footer.js";
 import { header } from "../components/header.js";
 import { nav } from "../components/nav.js";
+import { barra } from "../components/barra.js";
 import { renderItems } from "../components/cards.js";
 import { searchByName, filterByGenre, filterByStudio, filterByYear, computeStats, sortData } from "../lib/dataFunctions.js";
+// import { navigateTo } from "../router.js";
 
 export const home = () => {
   let dataAnime = data;
@@ -14,6 +16,9 @@ export const home = () => {
   //HEADER y NAV
   contenedor.appendChild(header());
   contenedor.appendChild(nav());
+
+  //BARRA
+  contenedor.appendChild(barra());
 
   // ESTADISTICAS
   const estadisticas = document.createElement("p");
@@ -46,7 +51,7 @@ export const home = () => {
   } 
   cards.innerHTML="";
   cards.appendChild(renderItems(filteredDataByName, noResultsFound));
-  estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
+  estadisticas.innerHTML="Total de películas: " + computeStats(filteredDataByName);
 });
   //FILTRO POR GENERO
   const selectGenre = contenedor.querySelector('select[name="genre"]');
@@ -91,8 +96,9 @@ export const home = () => {
   const clearButton = contenedor.querySelector('button[id="btn-clear"]');
   clearButton.addEventListener("click", function () {
   const selectores = contenedor.querySelectorAll("select");
-  const searchInput = contenedor.querySelector('select[name="searchButton"]');
-  selectores.forEach((selector) => {
+  const searchInput = contenedor.querySelector('input[name="searchButton"]');
+  console.log(searchInput)
+ selectores.forEach((selector) => {
     selector.value = selector.options[0].value;
     searchInput.value = "";
     noResultsFound.innerHTML = "";
@@ -102,9 +108,8 @@ export const home = () => {
     estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
   });
 
-  //BOTON APIKEY
-  
 });
+// linkEl.addEventListener('click', () => navigateTo("/singleChat", { id: "akira", id: "my-neighbor-totoro" }));
 
   return contenedor;
 };
