@@ -108,7 +108,7 @@ export default [
         "Los cazarrecompensas del Bebop se embarcan en una última misión épica para atrapar a un peligroso asesino en Marte.",
       description:
         "Es una película de anime basada en la exitosa serie de televisión Cowboy Bebop. Dirigida por Shinichirō Watanabe, la trama sigue a los cazarrecompensas del Bebop mientras investigan una serie de explosiones mortales en Marte. La película ofrece una narrativa independiente llena de acción, misterio y personajes complejos, ambientada en un universo futurista influenciado por el jazz y el cine noir. Knockin' on Heaven's Door es alabada por su impresionante animación y música, manteniendo el atractivo del fenómeno Cowboy Bebop y atrayendo a nuevos fanáticos al mundo de estos cazarrecompensas.",
-      imageUrl: "https://pics.filmaffinity.com/Cowboy_Bebop_la_pelaicula_Llamando_a_las_puertas_del_cielo-336990891-large.jpg",
+      imageUrl: "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/6151bs8iHYL._AC_SX522_.jpg",
       facts: {
         year: 2001,
         genre: "Ciencia Ficción · Thriller",
