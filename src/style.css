@@ -319,11 +319,12 @@ dd[itemprop="yearM"] {
 }
 #caja-api {
   margin: 50px;
-  /*font-size: 14px;*/
+  margin-bottom: 80px;
+  font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
 }
 #h-api {
-  padding-top: 50px;
+  padding-bottom: 20px;
   font-family: "Hammersmith One", sans-serif;
 }
 #label-api {
@@ -368,11 +369,37 @@ input[type="apibox"] {
 background-color: #c90040;
 }
 
-#chat-grupal{
+#chat-grupal {
+  align-items: center;
+  height: 450px;
+  width: 900px;
   background-color: #2d2d2d;
   border: none;
   border-radius: 10px;
-  margin: 50px;
+  margin: auto;
+  margin-top: 50px;
+}
+#h-error{
+font-family: "Hammersmith One", sans-serif;
+ position: absolute;
+ top: 400px;
+ left: 400px;
+}
+
+#p-error{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 80px;
+  position: absolute;
+  top: 450px;
+  left: 400px;
+}
+
+#img-error{
+  width: 400px;
+  position: relative;
+  top: 0px;
+  left: 300px;
 }
 
 /*
