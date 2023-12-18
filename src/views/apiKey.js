@@ -15,14 +15,16 @@ export const apiKey = () => {
  const cajaApi = document.createElement("div");
  cajaApi.setAttribute("id", "caja-api");
 
- //TEXTO
- cajaApi.textContent = 'Ingresa tu Api Key en el recuadro de abajo para continuar';
-
  //TITULO
  const hApi = document.createElement("h2");
  hApi.setAttribute("id", "h-api");
 hApi.textContent = "Prueba tu Api Key";
 cajaApi.appendChild(hApi); 
+
+//TEXTO
+const pTextApi = document.createElement("p");
+pTextApi.textContent = 'Ingresa tu Api Key en el recuadro de abajo para continuar';
+cajaApi.appendChild(pTextApi);
 
 //CAJA DE TEXTO
 const labelApi = document.createElement("label");

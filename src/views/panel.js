@@ -13,7 +13,6 @@ export const panel = () => {
  const chatGrupal = document.createElement("div");
  chatGrupal.setAttribute("id", "chat-grupal");
  contenedor.appendChild(chatGrupal);
- console.log(chatGrupal);
 
   //FOOTER
  contenedor.appendChild(footer());
