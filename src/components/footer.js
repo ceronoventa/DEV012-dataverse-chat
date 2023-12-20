@@ -4,7 +4,7 @@ export const footer = () => {
     `<footer>
     <p>
       Belén Osorio y Camila Palma<br>
-      <strong>Proyecto Dataverse de Laboratia</strong>
+      <strong>Proyecto Dataverse de Laboratoria</strong>
     </p>
   </footer> `;
   footerComponent.innerHTML = footerView;
