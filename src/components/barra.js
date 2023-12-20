@@ -11,7 +11,7 @@ export const barra = () => {
       barraSection.appendChild(btnPanel);  
       
       barraSection.innerHTML +=
-      `Recuerda ingresar  tu usuario para chatear con las películas que más te gusten`;
+      `Recuerda ingresar  tu apikey para chatear con las películas que más te gusten`;
       const btnApiKey = document.createElement("button");
       
       btnApiKey.setAttribute("id", "btn-apiKey");
