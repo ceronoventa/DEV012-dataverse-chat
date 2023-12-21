@@ -2,7 +2,7 @@ import { footer } from "../components/footer.js";
 import { header } from "../components/header.js";
 import { barra } from "../components/barra.js";
 import { movieDetail } from "../components/movieDetail.js";
-// import{chatCompletions} from "../lib/openIaAPI.js";
+import{chatCompletions} from "../lib/openIaAPI.js";
 
 
 export const singleChat = (props) => {
@@ -25,6 +25,7 @@ botonAbrirChat.style.display ="block";
 
 const imgFlecha = document.createElement("img");
 imgFlecha.setAttribute("src", "../flecha-hacia-abajo-para-navegar.png");
+imgFlecha.setAttribute("id", "img-flecha");
 botonAbrirChat.appendChild(imgFlecha);
 contenedor.appendChild(botonAbrirChat);
 
@@ -32,11 +33,6 @@ contenedor.appendChild(botonAbrirChat);
 const chatMovie = document.createElement("div");
 chatMovie.style.display ="none";
 chatMovie.classList.add("chat-movie");
-
-const imgCerrar = document.createElement("img");
-imgCerrar.setAttribute("id", "img-cerrar");
-imgCerrar.setAttribute("src", "../cerrar.png");
-chatMovie.appendChild(imgCerrar);
 
 
 //IMAGEN CHAT
@@ -51,15 +47,27 @@ chatMovie.appendChild(imgChat);
 titulop.innerHTML = `Chat ${props.name}`;
 chatMovie.appendChild(titulop);
 
+
+const imgCerrar = document.createElement("img");
+imgCerrar.setAttribute("id", "img-cerrar");
+imgCerrar.setAttribute("src", "../cerrar.png");
+chatMovie.appendChild(imgCerrar);
+
 //DIV DE CONVERSACIÓN
 const conversacionChat = document.createElement("div");
 conversacionChat.setAttribute("id", "conversacion-chat");
 chatMovie.appendChild(conversacionChat);
 
 //TEXTO
+const textChat = document.createElement("textarea");
+textChat.setAttribute("id", "text-chat");
+chatMovie.appendChild(textChat);
 
 //BOTON
-
+const botonEnviarChat = document.createElement("button");
+botonEnviarChat.setAttribute("id", "btn-enviarchat");
+botonEnviarChat.textContent = "Enviar";
+chatMovie.appendChild(botonEnviarChat);
 
 contenedor.appendChild(chatMovie);
 
@@ -67,12 +75,34 @@ contenedor.appendChild(chatMovie);
 contenedor.appendChild(footer());
 
 //------------funcionalidades----------------
-/*
-chatCompletions(localStorage.getItem('api'),{
-  model: "gpt-3.5-turbo-0613",
-   "messages": []
-}).then((response) => {/*lo que hara}). catch(.alert);*/
+botonEnviarChat.addEventListener("click", () => {
+  const userPrompt = textChat.value;
+  if (userPrompt === "") {
+    return;
+  }
 
+  chatCompletions(localStorage.getItem('KEY'), {
+    model: "gpt-3.5-turbo-0613",
+    messages: [
+      {
+        role: "system",
+        content: `eres la película  ${props.name}`
+      },
+      {
+        role: "user",
+        content: `${userPrompt}`
+      }
+    ]
+  }).then((response) => {
+    const responseIA = response.choices[0].message.content;
+    if (userPrompt === responseIA) {
+      conversacionChat.innerHTML += responseIA;
+    }
+  }).catch((error) => {
+    console.error("Error en la solicitud de chat:", error);
+  });
+});
+// funcionalidad abrir y cerrar chat
 const botonAbrir = contenedor.querySelector("#boton-abrirchat");
 botonAbrir.addEventListener('click', () => {
 
