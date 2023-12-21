@@ -304,11 +304,11 @@ dd[itemprop="yearM"] {
   letter-spacing: 1px;
 }
 #boton-abrirchat{
-  width: 400px;
-  height: 50px;
+  width: 415px;
+  height: 30px;
   border:none;
   background-color: #c90040;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 10px 10px 00px 0px;
   position: fixed;
   bottom: 0px;
@@ -317,50 +317,88 @@ dd[itemprop="yearM"] {
   font-family: "Hammersmith One", sans-serif;
   letter-spacing: 1px;
   font-weight: bold;
+  padding-bottom: 30px;;
 }
+#img-flecha{
+  width: 58px;
+  position: relative;
+  right: -134px;
+  top: 9px;
 
+}
 .chat-movie {
   width: 400px;
   height: 530px;
-  margin: 50px 20px 0px 100px;
   color: white;
-  border-radius: 6px 6px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
   padding: 15px 5px 0px 15px;
   background: rgb(40, 40, 40);
   position: fixed;
-  top:110px;
-  left: 980px;
+  bottom: 0px;
+  right: 90px;
  
 }
 #img-chat{
   height: 50px;
   width: 50px;
   border-radius: 50%;
- /* transform: scale(1.5, 1);
-  transform-origin: center center;*/
+  position: relative;
+  top: 8px;
+  left: -168px;
   
 }
 #titulo-p{
   font-family: "Hammersmith One", sans-serif;
-  color: #febf4e;
+  color: #ffffff;
   font-size: 16px;
-  padding-left: 15px;
-  padding-top: 10px;
-  padding-right: 20px;
-  z-index: -2;
-}
-/*#conversacion-chat{
-  width: 370px;
-  height: 370px;
-  background-color: #505050;
-  padding: 15px;
+  margin-left: 80px;
+  margin-right: 70px;
   position: relative;
-  top:100px;
-  left: -100px;
+  top: -26px;
+  left: -5px;
+}
+#img-cerrar{
+  width: 53px;
+  position: relative;
+  top: -66px;
+  right: -164px;
+}
+#conversacion-chat{
+  width: 370px;
+    height: 301px;
+    padding: 8px 15px 15px 15px;
+    position: relative;
+    top: -37px;
+    left: -2px;
+    overflow-wrap: break-word;
+    z-index: 1;
+} 
+#text-chat{
+  height: 80px;
+  width: 326px;
+  overflow-wrap: break-word;
+  border-width: 1px;
+  writing-mode: horizontal-tb;
+  position: relative;
+  bottom: 19px;
+  left: -9px;
+  border-radius: 10px;
+}
+#btn-enviarchat{
+  height: 86px;
+  width: 55px;
+  font-size: 11px;
+  font-weight: bold;
+  border: none;
+  color: white;
+  background-color: #c90040;
+  border-radius: 10px;
+  position: relative;
+  bottom: 58px;
+  right: 1px;
   z-index: 1;
-  overflow-y: scroll;
- 
-} */
+
+}
 #caja-api {
   margin: 50px;
   margin-bottom: 80px;

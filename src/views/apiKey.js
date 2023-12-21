@@ -51,5 +51,25 @@ contenedor.appendChild(cajaApi);
    //FOOTER
  contenedor.appendChild(footer());
 
+
+//----------Funcionalidades ------
+
+btnIngresarApi.addEventListener( "click" , () => {
+  const userApi = inputApi.value;
+  // if(userApi === ){
+  // return 
+  localStorage.setItem("KEY", userApi);
+// }
+// else if(!userApi === ){
+//   return alert("Tu Api Key es incorrecta");
+// }
+})
+
+btnBorrarApi.addEventListener("click" , () =>{
+  inputApi.value = "";
+  localStorage.clear();
+  alert("Tu api Key ha sido borrada")
+})
+
   return contenedor;
  }
