@@ -56,6 +56,9 @@ chatMovie.appendChild(imgCerrar);
 //DIV DE CONVERSACIÓN
 const conversacionChat = document.createElement("div");
 conversacionChat.setAttribute("id", "conversacion-chat");
+const parrafoChat = document.createElement("p");
+parrafoChat.setAttribute("id", "parrafo-chat");
+conversacionChat.appendChild(parrafoChat);
 chatMovie.appendChild(conversacionChat);
 
 //TEXTO
@@ -74,13 +77,11 @@ contenedor.appendChild(chatMovie);
   //FOOTER
 contenedor.appendChild(footer());
 
-//------------funcionalidades----------------
+//------------funcionalidades OPENAPI----------------
+
 botonEnviarChat.addEventListener("click", () => {
   const userPrompt = textChat.value;
-  if (userPrompt === "") {
-    return;
-  }
-
+ 
   chatCompletions(localStorage.getItem('KEY'), {
     model: "gpt-3.5-turbo-0613",
     messages: [
@@ -94,26 +95,33 @@ botonEnviarChat.addEventListener("click", () => {
       }
     ]
   }).then((response) => {
-    const responseIA = response.choices[0].message.content;
-    if (userPrompt === responseIA) {
-      conversacionChat.innerHTML += responseIA;
-    }
+  //  const responseIA = response.choices[0].message.content;
+    const responseIA = response
+console.log(responseIA)
+  if (userPrompt !== "" && responseIA) {
+    parrafoChat.textContent += JSON.stringify(responseIA);
+  }
   }).catch((error) => {
     console.error("Error en la solicitud de chat:", error);
   });
 });
+
+
+
+
 // funcionalidad abrir y cerrar chat
 const botonAbrir = contenedor.querySelector("#boton-abrirchat");
 botonAbrir.addEventListener('click', () => {
-
 chatMovie.style.display = 'block';
 botonAbrirChat.style.display = 'none';
-})
+});
 
 const botonCerrar = contenedor.querySelector("#img-cerrar")
 botonCerrar.addEventListener('click', () => {
 chatMovie.style.display = 'none';
 botonAbrirChat.style.display = 'block';
-})
+});
+
  return contenedor;
- }
+}
+ 
