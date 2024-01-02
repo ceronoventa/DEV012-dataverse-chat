@@ -8,4 +8,7 @@ return fetch("https://api.openai.com/v1/chat/completions", {
     },
         body: JSON.stringify(data)
 })
+.then((response) => {
+return response.json();
+})
 }
