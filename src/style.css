@@ -365,24 +365,29 @@ dd[itemprop="yearM"] {
 }
 #conversacion-chat{
   width: 370px;
-    height: 301px;
-    padding: 8px 15px 15px 15px;
-    position: relative;
-    top: -37px;
-    left: -2px;
-    overflow-wrap: break-word;
-    z-index: 1;
+  height: 301px;
+  padding: 8px 15px 15px 15px;
+  position: relative;
+  top: -37px;
+  left: -2px;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
 } 
 #text-chat{
   height: 80px;
-  width: 326px;
-  overflow-wrap: break-word;
-  border-width: 1px;
-  writing-mode: horizontal-tb;
-  position: relative;
-  bottom: 19px;
-  left: -9px;
-  border-radius: 10px;
+    width: 326px;
+    overflow-wrap: break-word;
+    border-width: 1px;
+    writing-mode: horizontal-tb;
+    position: relative;
+    bottom: 19px;
+    left: -9px;
+    border-radius: 10px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px;
 }
 #btn-enviarchat{
   height: 86px;
@@ -398,6 +403,26 @@ dd[itemprop="yearM"] {
   right: 1px;
   z-index: 1;
 
+}
+#mi-pregunta {
+  display: inline-block;
+  background-color: #F8B943;
+  border-radius: 10px;
+  margin: 10px 0 0 auto;
+  padding: 7px;
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: justify;
+
+}
+#su-respuesta{
+  background-color:#f96945;
+  border-radius: 10px;
+  margin: 10px auto  0 0 ;
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+  text-align: justify;
 }
 #caja-api {
   margin: 50px;
