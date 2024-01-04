@@ -56,13 +56,8 @@ contenedor.appendChild(cajaApi);
 
 btnIngresarApi.addEventListener( "click" , () => {
   const userApi = inputApi.value;
-  // if(userApi === ){
-  // return 
   localStorage.setItem("KEY", userApi);
-// }
-// else if(!userApi === ){
-//   return alert("Tu Api Key es incorrecta");
-// }
+  alert("¡Genial! Ahora puedes chatear con tus personajes favoritos")
 })
 
 btnBorrarApi.addEventListener("click" , () =>{
