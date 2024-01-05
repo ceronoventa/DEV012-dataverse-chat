@@ -1,8 +1,9 @@
 import { footer } from "../components/footer.js";
 import { header } from "../components/header.js";
 import { barra } from "../components/barra.js";
-// import { conjuntoMovies } from "../components/conjuntoMovies.js";
-// import { chatCompletions } from "../lib/openIaAPI.js";
+import { conjuntoMovies } from "../components/conjuntoMovies.js";
+import { chatCompletions } from "../lib/openIaAPI.js";
+import data from "../data/dataset.js";
 
 export const panel = () => {
  //CONTENEDOR
@@ -18,7 +19,7 @@ export const panel = () => {
  //VISTA DE PELICULAS
 const vistaPeliculas = document.createElement("div");
 vistaPeliculas.setAttribute("id", "vista-peliculas");
-// vistaPeliculas.appendChild(conjuntoMovies());
+ vistaPeliculas.appendChild(conjuntoMovies(data));
 chatGrupal.appendChild(vistaPeliculas);
 
 //panel
@@ -70,6 +71,56 @@ contenedor.appendChild(chatGrupal);
 
   //FOOTER
  contenedor.appendChild(footer());
+
+//------------funcionalidades OPENAPI----------------
+
+botonEnviarPanel.addEventListener("click", () => {
+  tresPuntos.style.display = "flex";
+
+  for (const personaje of data) {
+  chatCompletions(localStorage.getItem("KEY"), {
+model: "gpt-3.5-turbo-1106",
+messages: [
+  {
+    role: "system",
+    content: `eres el protagonista de la película  ${personaje.name} `,
+  },
+  {
+    role: "user",
+    content: ` ${textPanel.value}`,
+  },
+],
+temperature: 0.5,
+})
+
+.then((response) => {
+  const responseIA = response.choices[0].message.content;
+  if (textPanel.value !== "" && responseIA) {
+     const miPreguntaPanel = document.createElement("div");
+        miPreguntaPanel.setAttribute("id", "mi-preguntapanel");
+        conversacionChat.appendChild(miPreguntaPanel);
+
+        const suRespuestaPanel = document.createElement("div");
+        suRespuestaPanel.setAttribute("id", "su-respuestapanel");
+        conversacionChat.appendChild(suRespuestaPanel);
+
+        miPreguntaPanel.innerHTML += textPanel.value;
+        suRespuestaPanel.innerHTML += responseIA;
+        textPanel.value = "";
+        tresPuntos.style.display = "none";
+  }
+})
+.catch((error) => {
+  // alert("Debes ingresar una apiKey");
+  // navigateTo("/apiKey", {});
+  console.log(error)
+});
+}
+  })
+
+
+
+
 
  return contenedor;
    }
