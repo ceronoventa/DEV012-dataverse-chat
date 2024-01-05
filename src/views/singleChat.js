@@ -3,6 +3,7 @@ import { header } from "../components/header.js";
 import { barra } from "../components/barra.js";
 import { movieDetail } from "../components/movieDetail.js";
 import { chatCompletions } from "../lib/openIaAPI.js";
+import { navigateTo } from "../router.js";
 
 export const singleChat = (props) => {
   //CONTENEDOR
@@ -49,6 +50,21 @@ export const singleChat = (props) => {
   imgCerrar.setAttribute("id", "img-cerrar");
   imgCerrar.setAttribute("src", "../cerrar.png");
   chatMovie.appendChild(imgCerrar);
+ 
+  // tres puntos 
+ const tresPuntos = document.createElement("div");
+ tresPuntos.setAttribute("id", "puntos-colores");
+ tresPuntos.style.display = "none";
+ const puntoUno = document.createElement("div");
+ puntoUno.setAttribute("class", "tres-puntos");
+ tresPuntos.appendChild(puntoUno);
+ const puntoDos = document.createElement("div");
+ puntoDos.setAttribute("class", "tres-puntos");
+ tresPuntos.appendChild(puntoDos);
+ const puntoTres = document.createElement("div");
+ puntoTres.setAttribute("class", "tres-puntos");
+ tresPuntos.appendChild(puntoTres);
+ chatMovie.appendChild(tresPuntos);
 
   //DIV DE CONVERSACIÓN
   const conversacionChat = document.createElement("div");
@@ -75,6 +91,8 @@ export const singleChat = (props) => {
   //------------funcionalidades OPENAPI----------------
 
   botonEnviarChat.addEventListener("click", () => {
+        tresPuntos.style.display = "flex";
+      
     chatCompletions(localStorage.getItem("KEY"), {
       model: "gpt-3.5-turbo-1106",
       messages: [
@@ -91,7 +109,6 @@ export const singleChat = (props) => {
     })
       .then((response) => {
         const responseIA = response.choices[0].message.content;
-        console.log(responseIA);
         if (textChat.value !== "" && responseIA) {
           const miPregunta = document.createElement("div");
           miPregunta.setAttribute("id", "mi-pregunta");
@@ -99,16 +116,20 @@ export const singleChat = (props) => {
           const suRespuesta = document.createElement("div");
           suRespuesta.setAttribute("id", "su-respuesta");
           conversacionChat.appendChild(suRespuesta);
-
+          
           miPregunta.innerHTML += textChat.value;
           suRespuesta.innerHTML += responseIA;
           textChat.value = "";
+          tresPuntos.style.display = "none";
         }
       })
       .catch((error) => {
-        console.error("Error en la solicitud de chat:", error);
-      });
+        alert("Debes ingresar una apiKey");
+        navigateTo("/apiKey", {});
+    });
   });
+ 
+  
 
   // funcionalidad abrir y cerrar chat
   const botonAbrir = contenedor.querySelector("#boton-abrirchat");
