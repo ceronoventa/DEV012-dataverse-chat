@@ -98,7 +98,7 @@ export const singleChat = (props) => {
       messages: [
         {
           role: "system",
-          content: `eres el protagonista de la película  ${props.name} `,
+          content: `eres el protagonista de la película  ${props.name}  `,
         },
         {
           role: "user",
