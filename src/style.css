@@ -575,6 +575,7 @@ background-color: #c90040;
   font-size: 15px;
   overflow-y: scroll;
 } 
+
 /* Tamaño del scroll */
 #conversacion-panel::-webkit-scrollbar {
   width: 8px;

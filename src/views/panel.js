@@ -108,7 +108,14 @@ temperature: 0.5,
         suRespuestaPanel.innerHTML += responseIA;
         textPanel.value = "";
         tresPuntos.style.display = "none";
-  }
+  
+        //modificar imagenes peliculas dentro de conversacionPanel
+      /*const imagenesPanel = conversacionChat.querySelectorAll('img');
+      imagenesPanel.forEach((imagen) => {
+        imagen.style.maxWidth = '10%';
+        imagen.style.height = 'auto';
+      })*/
+      }
 })
 .catch((error) => {
   // alert("Debes ingresar una apiKey");
