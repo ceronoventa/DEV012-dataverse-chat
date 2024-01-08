@@ -19,7 +19,7 @@ export const panel = () => {
  //VISTA DE PELICULAS
 const vistaPeliculas = document.createElement("div");
 vistaPeliculas.setAttribute("id", "vista-peliculas");
- vistaPeliculas.appendChild(conjuntoMovies(data));
+vistaPeliculas.appendChild(conjuntoMovies(data));
 chatGrupal.appendChild(vistaPeliculas);
 
 //panel
@@ -99,22 +99,22 @@ temperature: 0.5,
      const miPreguntaPanel = document.createElement("div");
         miPreguntaPanel.setAttribute("id", "mi-preguntapanel");
         conversacionChat.appendChild(miPreguntaPanel);
+        miPreguntaPanel.innerHTML += textPanel.value;
 
+
+        // let historialPanel = [];
         const suRespuestaPanel = document.createElement("div");
         suRespuestaPanel.setAttribute("id", "su-respuestapanel");
+        suRespuestaPanel.innerHTML += responseIA;
         conversacionChat.appendChild(suRespuestaPanel);
 
-        miPreguntaPanel.innerHTML += textPanel.value;
-        suRespuestaPanel.innerHTML += responseIA;
+        // const multiplesRespuestas = suRespuestaPanel.innerHTML += responseIA
+        // historialPanel =[multiplesRespuestas]; 
+
         textPanel.value = "";
         tresPuntos.style.display = "none";
   
-        //modificar imagenes peliculas dentro de conversacionPanel
-      /*const imagenesPanel = conversacionChat.querySelectorAll('img');
-      imagenesPanel.forEach((imagen) => {
-        imagen.style.maxWidth = '10%';
-        imagen.style.height = 'auto';
-      })*/
+      
       }
 })
 .catch((error) => {
