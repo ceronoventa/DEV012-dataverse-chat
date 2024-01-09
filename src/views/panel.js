@@ -77,6 +77,7 @@ contenedor.appendChild(chatGrupal);
 botonEnviarPanel.addEventListener("click", () => {
   tresPuntos.style.display = "flex";
 
+  const historialIA = []; //array q guarda respuestas 
   for (const personaje of data) {
   chatCompletions(localStorage.getItem("KEY"), {
 model: "gpt-3.5-turbo-1106",
@@ -96,26 +97,25 @@ temperature: 0.5,
 .then((response) => {
   const responseIA = response.choices[0].message.content;
   if (textPanel.value !== "" && responseIA) {
-     const miPreguntaPanel = document.createElement("div");
+    historialIA.push(responseIA);
+
+
+    const miPreguntaPanel = document.createElement("div");
         miPreguntaPanel.setAttribute("id", "mi-preguntapanel");
-        conversacionChat.appendChild(miPreguntaPanel);
+        conversacionPanel.appendChild(miPreguntaPanel);
         miPreguntaPanel.innerHTML += textPanel.value;
 
 
-        // let historialPanel = [];
-        const suRespuestaPanel = document.createElement("div");
-        suRespuestaPanel.setAttribute("id", "su-respuestapanel");
-        suRespuestaPanel.innerHTML += responseIA;
-        conversacionChat.appendChild(suRespuestaPanel);
-
+        
         // const multiplesRespuestas = suRespuestaPanel.innerHTML += responseIA
         // historialPanel =[multiplesRespuestas]; 
 
         textPanel.value = "";
         tresPuntos.style.display = "none";
   
-      
+
       }
+      
 })
 .catch((error) => {
   // alert("Debes ingresar una apiKey");
@@ -123,11 +123,19 @@ temperature: 0.5,
   console.log(error)
 });
 }
-  })
+
+// Mostrar respuestas después de completar el bucle
+for (const respuestaIA of historialIAIA) {
+  const suRespuestaPanel = document.createElement("div");
+  suRespuestaPanel.setAttribute("id", "su-respuestapanel");
+  suRespuestaPanel.innerHTML += respuestaIA;
+  conversacionPanel.appendChild(suRespuestaPanel);
+}
+});
 
 
 
 
 
  return contenedor;
-   }
+   };
