@@ -81,11 +81,15 @@ export const panel = () => {
 
   botonEnviarPanel.addEventListener("click", () => {
     tresPuntos.style.display = "flex";
-    const historialIA = []; //array q guarda respuestas
-
+    const arregloDePromesas = []; //array q guarda respuestas
+    
+    const miPreguntaPanel = document.createElement("div");
+    miPreguntaPanel.setAttribute("id", "mi-preguntapanel");
+    conversacionPanel.appendChild(miPreguntaPanel);
+    miPreguntaPanel.innerHTML += textPanel.value;
     
     for (const personaje of data) {
-      chatCompletions(localStorage.getItem("KEY"), {
+      const promesa = chatCompletions(localStorage.getItem("KEY"), {
         model: "gpt-3.5-turbo-1106",
         messages: [
           {
@@ -98,43 +102,35 @@ export const panel = () => {
           },
         ],
         temperature: 0.5,
-      })
-        .then((response) => {
-          const responseIA = response.choices[0].message.content;
-          if (textPanel.value !== "" && responseIA) {
-            // respuesta al historial
-            historialIA.push(responseIA);
+      });
 
-            //nuestra pregunta
-            const miPreguntaPanel = document.createElement("div");
-            miPreguntaPanel.setAttribute("id", "mi-preguntapanel");
-            conversacionPanel.appendChild(miPreguntaPanel);
-            miPreguntaPanel.innerHTML += textPanel.value;
-            textPanel.value = "";
+      arregloDePromesas.push(promesa)
+    
+    };
+    
+    
+    Promise.all(arregloDePromesas).then(function(arregloDeRespuestas) {
 
-            //mostrar respuestas
-            // promise.all([personaje, response]).then(()
-            for (const respuestaIA of historialIA) {
-              const suRespuestaPanel = document.createElement("div");
+     
+      for(let i =0; i < arregloDeRespuestas.length; i++){
+        const respuesta = arregloDeRespuestas[i].choices[0].message.content;
+       
+            const suRespuestaPanel = document.createElement("div");
               suRespuestaPanel.setAttribute("class", "su-respuestapanel");
 
-              suRespuestaPanel.innerHTML += respuestaIA;
-              conversacionPanel.appendChild(suRespuestaPanel);
-              console.log(personaje)
-            }
-            // )
+              suRespuestaPanel.innerHTML += respuesta;
 
-            //oculta los tres puntos
-            tresPuntos.style.display = "none";
-          }
-        })
-        .catch((error) => {
+              conversacionPanel.appendChild(suRespuestaPanel);  
+    }
+    textPanel.value = "";
+    tresPuntos.style.display = "none";
+    }).catch(function(error){
           // alert("Debes ingresar una apiKey");
           // navigateTo("/apiKey", {});
           console.log(error);
         });
-    }
-  });
+       
+      });
 
   return contenedor;
 };
