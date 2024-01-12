@@ -81,8 +81,9 @@ export const panel = () => {
 
   botonEnviarPanel.addEventListener("click", () => {
     tresPuntos.style.display = "flex";
-
     const historialIA = []; //array q guarda respuestas
+
+    
     for (const personaje of data) {
       chatCompletions(localStorage.getItem("KEY"), {
         model: "gpt-3.5-turbo-1106",
@@ -112,13 +113,16 @@ export const panel = () => {
             textPanel.value = "";
 
             //mostrar respuestas
+            // promise.all([personaje, response]).then(()
             for (const respuestaIA of historialIA) {
               const suRespuestaPanel = document.createElement("div");
               suRespuestaPanel.setAttribute("class", "su-respuestapanel");
 
               suRespuestaPanel.innerHTML += respuestaIA;
               conversacionPanel.appendChild(suRespuestaPanel);
+              console.log(personaje)
             }
+            // )
 
             //oculta los tres puntos
             tresPuntos.style.display = "none";
