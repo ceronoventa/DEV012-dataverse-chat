@@ -125,8 +125,8 @@ export const panel = () => {
     textPanel.value = "";
     tresPuntos.style.display = "none";
     }).catch(function(error){
-          // alert("Debes ingresar una apiKey");
-          // navigateTo("/apiKey", {});
+       alert("Debes ingresar una apiKey");
+       navigateTo("/apiKey", {});
           console.log(error);
         });
        
