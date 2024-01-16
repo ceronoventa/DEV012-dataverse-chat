@@ -1,6 +1,6 @@
 export const nav = () => {
-const navComponent = document.createElement("div");
-    const navView = `<nav>
+  const navComponent = document.createElement("div");
+  const navView = `<nav>
   <input id="inputFilter" name="searchButton" type="search" placeholder="Buscar película"/>
   <label for="genre"></label>
   
@@ -63,7 +63,7 @@ const navComponent = document.createElement("div");
   </select>
 
   <button id="btn-clear" data-testid="button-clear">Limpiar</button>
-</nav>`
-navComponent.innerHTML = navView;
-  return navComponent ;
-} 
+</nav>`;
+  navComponent.innerHTML = navView;
+  return navComponent;
+};

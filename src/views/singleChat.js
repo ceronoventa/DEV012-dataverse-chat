@@ -50,21 +50,21 @@ export const singleChat = (props) => {
   imgCerrar.setAttribute("id", "img-cerrar");
   imgCerrar.setAttribute("src", "../cerrar.png");
   chatMovie.appendChild(imgCerrar);
- 
-  // tres puntos 
- const tresPuntos = document.createElement("div");
- tresPuntos.setAttribute("id", "puntos-colores");
- tresPuntos.style.display = "none";
- const puntoUno = document.createElement("div");
- puntoUno.setAttribute("class", "tres-puntos");
- tresPuntos.appendChild(puntoUno);
- const puntoDos = document.createElement("div");
- puntoDos.setAttribute("class", "tres-puntos");
- tresPuntos.appendChild(puntoDos);
- const puntoTres = document.createElement("div");
- puntoTres.setAttribute("class", "tres-puntos");
- tresPuntos.appendChild(puntoTres);
- chatMovie.appendChild(tresPuntos);
+
+  // tres puntos
+  const tresPuntos = document.createElement("div");
+  tresPuntos.setAttribute("id", "puntos-colores");
+  tresPuntos.style.display = "none";
+  const puntoUno = document.createElement("div");
+  puntoUno.setAttribute("class", "tres-puntos");
+  tresPuntos.appendChild(puntoUno);
+  const puntoDos = document.createElement("div");
+  puntoDos.setAttribute("class", "tres-puntos");
+  tresPuntos.appendChild(puntoDos);
+  const puntoTres = document.createElement("div");
+  puntoTres.setAttribute("class", "tres-puntos");
+  tresPuntos.appendChild(puntoTres);
+  chatMovie.appendChild(tresPuntos);
 
   //DIV DE CONVERSACIÓN
   const conversacionChat = document.createElement("div");
@@ -91,8 +91,8 @@ export const singleChat = (props) => {
   //------------funcionalidades OPENAPI----------------
 
   botonEnviarChat.addEventListener("click", () => {
-        tresPuntos.style.display = "flex";
-      
+    tresPuntos.style.display = "flex";
+
     chatCompletions(localStorage.getItem("KEY"), {
       model: "gpt-3.5-turbo-1106",
       messages: [
@@ -116,7 +116,7 @@ export const singleChat = (props) => {
           const suRespuesta = document.createElement("div");
           suRespuesta.setAttribute("id", "su-respuesta");
           conversacionChat.appendChild(suRespuesta);
-          
+
           miPregunta.innerHTML += textChat.value;
           suRespuesta.innerHTML += responseIA;
           textChat.value = "";
@@ -124,12 +124,10 @@ export const singleChat = (props) => {
         }
       })
       .catch((error) => {
-        alert("Debes ingresar una apiKey");
+        alert("Debes ingresar una apiKey", error);
         navigateTo("/apiKey", {});
-    });
+      });
   });
- 
-  
 
   // funcionalidad abrir y cerrar chat
   const botonAbrir = contenedor.querySelector("#boton-abrirchat");

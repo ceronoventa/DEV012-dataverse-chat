@@ -1,14 +1,14 @@
 import { navigateTo } from "../router.js";
 export const renderItems = (data) => {
   const cardsComponent = document.createElement("ul");
-  cardsComponent.classList.add("cards")
-    data.forEach((pelicula) => {
-      const listItem = document.createElement("li");
-listItem.setAttribute("itemscope","");
-listItem.setAttribute("itemtype","PeliculasAnimacionJaponesa");
-listItem.classList.add("itemMuro");
-listItem.setAttribute("data-id",pelicula.id);
-listItem.innerHTML += ` 
+  cardsComponent.classList.add("cards");
+  data.forEach((pelicula) => {
+    const listItem = document.createElement("li");
+    listItem.setAttribute("itemscope", "");
+    listItem.setAttribute("itemtype", "PeliculasAnimacionJaponesa");
+    listItem.classList.add("itemMuro");
+    listItem.setAttribute("data-id", pelicula.id);
+    listItem.innerHTML += ` 
           <dl itemscope itemtype="PeliculasAnimacionJaponesa">
               <img src="${pelicula.imageUrl}" alt="${pelicula.name}"/>
               <div class="texto">
@@ -20,11 +20,11 @@ listItem.innerHTML += `
               </div>
             </dl>
       `;
-      listItem.addEventListener("click",() => {
-navigateTo("/singleChat", pelicula )
-      })
-      cardsComponent.appendChild(listItem);
+    listItem.addEventListener("click", () => {
+      navigateTo("/singleChat", pelicula);
     });
-   
-    return cardsComponent;
-  };
+    cardsComponent.appendChild(listItem);
+  });
+
+  return cardsComponent;
+};

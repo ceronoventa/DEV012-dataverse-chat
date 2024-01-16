@@ -4,6 +4,7 @@ import { barra } from "../components/barra.js";
 import { conjuntoMovies } from "../components/conjuntoMovies.js";
 import { chatCompletions } from "../lib/openIaAPI.js";
 import data from "../data/dataset.js";
+import { navigateTo } from "../router.js";
 
 export const panel = () => {
   //CONTENEDOR
@@ -27,7 +28,6 @@ export const panel = () => {
 
   vistaPeliculas.appendChild(conjuntoMovies(data));
   chatGrupal.appendChild(vistaPeliculas);
-
 
   //panel
   const panelChat = document.createElement("div");
@@ -82,12 +82,12 @@ export const panel = () => {
   botonEnviarPanel.addEventListener("click", () => {
     tresPuntos.style.display = "flex";
     const arregloDePromesas = []; //array q guarda respuestas
-    
+
     const miPreguntaPanel = document.createElement("div");
     miPreguntaPanel.setAttribute("id", "mi-preguntapanel");
     conversacionPanel.appendChild(miPreguntaPanel);
     miPreguntaPanel.innerHTML += textPanel.value;
-    
+
     for (const personaje of data) {
       const promesa = chatCompletions(localStorage.getItem("KEY"), {
         model: "gpt-3.5-turbo-1106",
@@ -104,33 +104,30 @@ export const panel = () => {
         temperature: 0.5,
       });
 
-      arregloDePromesas.push(promesa)
-    
-    };
-    
-    
-    Promise.all(arregloDePromesas).then(function(arregloDeRespuestas) {
-
-     
-      for(let i =0; i < arregloDeRespuestas.length; i++){
-        const respuesta = arregloDeRespuestas[i].choices[0].message.content;
-       
-            const suRespuestaPanel = document.createElement("div");
-              suRespuestaPanel.setAttribute("class", "su-respuestapanel");
-
-              suRespuestaPanel.innerHTML += respuesta;
-
-              conversacionPanel.appendChild(suRespuestaPanel);  
+      arregloDePromesas.push(promesa);
     }
-    textPanel.value = "";
-    tresPuntos.style.display = "none";
-    }).catch(function(error){
-       alert("Debes ingresar una apiKey");
-       navigateTo("/apiKey", {});
-          console.log(error);
-        });
-       
+
+    Promise.all(arregloDePromesas)
+      .then(function (arregloDeRespuestas) {
+        for (let i = 0; i < arregloDeRespuestas.length; i++) {
+          const respuesta = arregloDeRespuestas[i].choices[0].message.content;
+
+          const suRespuestaPanel = document.createElement("div");
+          suRespuestaPanel.setAttribute("class", "su-respuestapanel");
+
+          suRespuestaPanel.innerHTML += respuesta;
+
+          conversacionPanel.appendChild(suRespuestaPanel);
+        }
+        textPanel.value = "";
+        tresPuntos.style.display = "none";
+      })
+      .catch(function (error) {
+        alert("Debes ingresar una apiKey");
+        navigateTo("/apiKey", {});
+        console.log(error);
       });
+  });
 
   return contenedor;
 };

@@ -17,8 +17,8 @@ export const movieDetail = (selectedMovie) => {
     </li>
   `;
 
-  movieComponent.innerHTML = movieDetailHtml;
-}
+    movieComponent.innerHTML = movieDetailHtml;
+  }
 
-return movieComponent;
+  return movieComponent;
 };
