@@ -9,7 +9,8 @@
 * [5. Prototipo de baja fidelidad]
 7 [6. Prototipo de alta fidelidad]
 * [7. Testeos de usabilidad]
-* [8. Autoras]
+* [8. Resultados]
+* [9. Autoras]
 
 ***
 
@@ -84,22 +85,21 @@ Como usuaria de Dataverse Chat, deseo tener la capacidad de visualizar el sitio 
 
 
 #### 6 Prototipo de alta fidelidad
-<img src ="./protoalta.jpg" alt="prototipo de alta fidelidad1">
-<img src ="./altaerror.jpg" alt="prototipo de alta fidelidad2">
+<img src ="./protoalta.jpg" alt="prototipo de alta fidelidad1" width="600px">
+<img src ="./altaerror.jpg" alt="prototipo de alta fidelidad2" width="600px">
 
 
 ### 7 Testeos de usabilidad
-A través de testeos de usabilidad se pueden detectar problemas con test unitarios que resuelven el problema de (AGREGAR AQUI)
-pegar boiler de prueba unitaria</br>
+A través de testeos de usabilidad se pueden detectar problemas con test unitarios que resuelven antes de desplegar el sitio.</br>
 <img src ="./test pasados.jpg" alt="test pasados" width="600px">
 
 
 ### 8 Resultados
 <img src ="./vistas celulares.jpg" alt="vistas celulares" width="600px"></br>
-Vista de escritorio</br>
-<img src ="./vistas PC.jpg" alt="vistas PC" width="600px"></br>
 Vista de celular</br>
+<img src ="./vistas PC.jpg" alt="vistas PC" width="600px"></br>
+Vista de escritorio</br>
 
-### Autoras
+### 9 Autoras
 Belen Osorio
 Camila Palma
