@@ -74,24 +74,31 @@ Como usuaria, deseo tener la posibilidad de participar en un chat grupal donde p
 HU-5
 Como usuaria de Dataverse Chat, deseo tener la capacidad de visualizar el sitio tanto en mi computadora como en mi celular. Esto implica la conveniencia de una interfaz responsiva que se adapte a diferentes tamaños de pantalla, proporcionándome una experiencia consistente y accesible sin importar el dispositivo que esté utilizando.
 
-
+<img src ="./planning en trello.jpg" alt="planning en trello" width="600px">
 
 #### 5 Prototipo de baja fidelidad
 
-PEGAR RUTA IMAGEN BAJA FIDELIDAD (está al final de las views)
-
+<img src ="./protipo.jpg" alt="prototipo de baja fidelidad1" width="600px">
+<img src ="./protoerror.jpg" alt="prototipo de alta fidelidad2" width="600px">
 
 
 
 #### 6 Prototipo de alta fidelidad
-PEGAR ALTA FIDELIDAD
- [Figma]
+<img src ="./protoalta.jpg" alt="prototipo de alta fidelidad1">
+<img src ="./altaerror.jpg" alt="prototipo de alta fidelidad2">
 
 
 ### 7 Testeos de usabilidad
 A través de testeos de usabilidad se pueden detectar problemas con test unitarios que resuelven el problema de (AGREGAR AQUI)
-pegar boiler de prueba unitaria
+pegar boiler de prueba unitaria</br>
+<img src ="./test pasados.jpg" alt="test pasados" width="600px">
 
+
+### 8 Resultados
+<img src ="./vistas celulares.jpg" alt="vistas celulares" width="600px"></br>
+Vista de escritorio</br>
+<img src ="./vistas PC.jpg" alt="vistas PC" width="600px"></br>
+Vista de celular</br>
 
 ### Autoras
 Belen Osorio
