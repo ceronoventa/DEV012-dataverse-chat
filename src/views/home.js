@@ -4,7 +4,14 @@ import { header } from "../components/header.js";
 import { nav } from "../components/nav.js";
 import { barra } from "../components/barra.js";
 import { renderItems } from "../components/cards.js";
-import { searchByName, filterByGenre, filterByStudio, filterByYear, computeStats, sortData } from "../lib/dataFunctions.js";
+import {
+  searchByName,
+  filterByGenre,
+  filterByStudio,
+  filterByYear,
+  computeStats,
+  sortData,
+} from "../lib/dataFunctions.js";
 // import { navigateTo } from "../router.js";
 
 export const home = () => {
@@ -23,9 +30,9 @@ export const home = () => {
   // ESTADISTICAS
   const estadisticas = document.createElement("p");
   estadisticas.classList.add("compute-stats");
-  estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
+  estadisticas.innerHTML = "Total de películas: " + computeStats(dataAnime);
   contenedor.appendChild(estadisticas);
-  
+
   //"NO RESULTADOS"
   const noResultsFound = document.createElement("div");
   noResultsFound.classList.add("noResultsFound");
@@ -43,73 +50,73 @@ export const home = () => {
   //FILTRO POR INPUT
   const inputSearch = contenedor.querySelector("#inputFilter");
   inputSearch.addEventListener("input", () => {
-  const inputValue = inputSearch.value.toLowerCase();
-  const filteredDataByName = searchByName(dataAnime, "input", inputValue);
-  if (filteredDataByName.length === 0) {
-    noResultsFound.textContent =
-      "Lo sentimos, no se encontraron resultados que coincidan con la búsqueda.";
-  } 
-  cards.innerHTML="";
-  cards.appendChild(renderItems(filteredDataByName, noResultsFound));
-  estadisticas.innerHTML="Total de películas: " + computeStats(filteredDataByName);
-});
+    const inputValue = inputSearch.value.toLowerCase();
+    const filteredDataByName = searchByName(dataAnime, "input", inputValue);
+    if (filteredDataByName.length === 0) {
+      noResultsFound.textContent =
+        "Lo sentimos, no se encontraron resultados que coincidan con la búsqueda.";
+    }
+    cards.innerHTML = "";
+    cards.appendChild(renderItems(filteredDataByName, noResultsFound));
+    estadisticas.innerHTML =
+      "Total de películas: " + computeStats(filteredDataByName);
+  });
   //FILTRO POR GENERO
   const selectGenre = contenedor.querySelector('select[name="genre"]');
   selectGenre.addEventListener("change", (e) => {
-  const genreSelected = e.target.value;
-  dataAnime = filterByGenre(dataAnime, "genre", genreSelected);
-  cards.innerHTML="";
-  cards.appendChild(renderItems(dataAnime));
-  estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
-});
+    const genreSelected = e.target.value;
+    dataAnime = filterByGenre(dataAnime, "genre", genreSelected);
+    cards.innerHTML = "";
+    cards.appendChild(renderItems(dataAnime));
+    estadisticas.innerHTML = "Total de películas: " + computeStats(dataAnime);
+  });
   //FILTRO POR ESTUDIO
   const selectStudio = contenedor.querySelector('[name="studio"]');
   selectStudio.addEventListener("change", (e) => {
-  const studioSelected = e.target.value;
-  dataAnime = filterByStudio(dataAnime, "studio", studioSelected);
-  cards.innerHTML="";
-  cards.appendChild(renderItems(dataAnime));
-  estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
-});
+    const studioSelected = e.target.value;
+    dataAnime = filterByStudio(dataAnime, "studio", studioSelected);
+    cards.innerHTML = "";
+    cards.appendChild(renderItems(dataAnime));
+    estadisticas.innerHTML = "Total de películas: " + computeStats(dataAnime);
+  });
 
   //FILTRO POR AÑO
   const selectYear = contenedor.querySelector('select[name="year"]');
   selectYear.addEventListener("change", (e) => {
-  const yearSelected = e.target.value;
-  dataAnime = filterByYear(dataAnime, "year", yearSelected);
-  cards.innerHTML="";
-  cards.appendChild(renderItems(dataAnime));
-  estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
+    const yearSelected = e.target.value;
+    dataAnime = filterByYear(dataAnime, "year", yearSelected);
+    cards.innerHTML = "";
+    cards.appendChild(renderItems(dataAnime));
+    estadisticas.innerHTML = "Total de películas: " + computeStats(dataAnime);
   });
 
   //ASCENDENTE Y DESCENDENTE
   const selectOrder = contenedor.querySelector('select[name="name"]');
   selectOrder.addEventListener("change", (e) => {
-  const orderSelected = e.target.value;
-  dataAnime = sortData(dataAnime, "name", orderSelected);
-  cards.innerHTML="";
-  cards.appendChild(renderItems(dataAnime));
-  estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
+    const orderSelected = e.target.value;
+    dataAnime = sortData(dataAnime, "name", orderSelected);
+    cards.innerHTML = "";
+    cards.appendChild(renderItems(dataAnime));
+    estadisticas.innerHTML = "Total de películas: " + computeStats(dataAnime);
   });
 
   //BOTON LIMPIAR
   const clearButton = contenedor.querySelector('button[id="btn-clear"]');
   clearButton.addEventListener("click", function () {
-  const selectores = contenedor.querySelectorAll("select");
-  const searchInput = contenedor.querySelector('input[name="searchButton"]');
-  console.log(searchInput)
- selectores.forEach((selector) => {
-    selector.value = selector.options[0].value;
-    searchInput.value = "";
-    noResultsFound.innerHTML = "";
-    cards.innerHTML="";
-    dataAnime = data;
-    cards.appendChild(renderItems(dataAnime));
-    estadisticas.innerHTML="Total de películas: " + computeStats(dataAnime);
+    const selectores = contenedor.querySelectorAll("select");
+    const searchInput = contenedor.querySelector('input[name="searchButton"]');
+    console.log(searchInput);
+    selectores.forEach((selector) => {
+      selector.value = selector.options[0].value;
+      searchInput.value = "";
+      noResultsFound.innerHTML = "";
+      cards.innerHTML = "";
+      dataAnime = data;
+      cards.appendChild(renderItems(dataAnime));
+      estadisticas.innerHTML = "Total de películas: " + computeStats(dataAnime);
+    });
   });
-
-});
-// linkEl.addEventListener('click', () => navigateTo("/singleChat", { id: "akira", id: "my-neighbor-totoro" }));
+  // linkEl.addEventListener('click', () => navigateTo("/singleChat", { id: "akira", id: "my-neighbor-totoro" }));
 
   return contenedor;
 };
